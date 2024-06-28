@@ -11,7 +11,7 @@ function generatePDF() {
         } else if (document.getElementById('fal').checked) {
             status = 'Falta';
         } else {
-            alert('Selecione uma opção de estado (Presente ou Falta).');
+            alert('Preencha todos os campos!');
             return;
         }
 
