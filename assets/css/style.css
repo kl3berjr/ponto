@@ -1,0 +1,170 @@
+body {
+    width: 99vw; 
+    height: 95vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background: #FFFFFF; 
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Sans-serif; 
+
+.container {
+    width:80vw; 
+    height:80vh; 
+    display:flex;
+    box-shadow:5px 5px 10px #DCDCDC; 
+}
+
+.form-image {
+    width: 50vw; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: #737781; 
+    padding: 15px; 
+}
+
+.form-image img {
+    width: 500px; 
+    height: 500px; 
+}
+
+.form {
+    width: 50vw; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    background-color: #FFFFFF; 
+    padding: 50px;
+}
+
+.form-header {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Aqui configuramos a classe que contém as descrições e caixas de texto do formulário.*/
+.input-group {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    padding: 16px 0; 
+}
+
+/*Aqui configuramos o cojunto de descrição e caixa de texto.*/
+.input-box {
+    display: flex; 
+    flex-direction: column; 
+}
+
+/*Aqui estamos configurando especificamente as caixas de texto.*/
+.input-box input {
+    margin: 10px 0;
+    padding: 13px 19px; 
+    border: none; 
+    border-radius: 10px; 
+    box-shadow: 2px 2px 6px #747474; 
+}
+
+/*Aqui estamos configurando a linha ao redor da caixa de texto quando ela está clicada.*/
+.input-box input:focus-visible {
+    outline: 2px solid #5B7CC2; 
+}
+
+/*Aqui mudamos a cor de fundo da caixa de texto quando o mouse passar por ela.*/
+.input-box input:hover{
+    background-color: #F5F5F5; 
+}
+
+/*Aqui mudamos a fonte das descrições das caixas de texto e do título "Gênero".*/
+.input-box label, .gender-title h6{
+    font-size: 15px; 
+    font-weight: bold; 
+    color: #000000;
+}
+
+/*Aqui mudamos o texto de fundo de cada caixa de texto.*/
+.input-box input::placeholder {
+    color: #DCDCDC; 
+}
+
+/*Aqui estamos configurando a classe que guarda as descrições e as bolinhas de marcação.*/
+.input-group {
+    display: flex; 
+    justify-content: space-between; 
+    padding: 0 8px; 
+}
+/*Aqui configuramos a classe que guarda cada rádio button e cada descrição.*/
+.status-inputs {
+    font-size: 20px;
+    display:flex;
+    align-items: center; 
+}
+/*Aqui estamos configurando a bolinha de marcação.*/
+.status-inputs input {
+    margin-left: 20px; 
+}
+/*Aqui configuramos a descrição dos gêneros.*/
+.status-inputs label {
+    font-size: 15px; 
+    font-weight: bold;
+    color: #000000; 
+}
+
+
+/*Aqui estamos configurando o botão "Cadastrar".*/
+.register-button button {
+    width: 35vw; 
+    margin-top: 20px; 
+    margin-bottom: 30px; 
+    border:none; 
+    background-color: #737781; 
+    font-size: 15px; 
+    font-weight: bold; 
+    color: #FFFFFF; 
+    padding: 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+/*Aqui estamos mudando a cor de fundo do botão quando o mouse passa por ele.*/
+.register-button button:hover{
+    background-color: #737781; /*Cor verde mais claro.*/
+}
+/*Aqui estamos configurando o layout para ficar responsivo.*/
+@media screen and (max-width: 1080px){/*As configurações serão executadas quando a tela estiver na largura máxia de até 1080px.*/
+    .form-image {
+        display: none; /*Aqui estamos ocultando a imagem.*/
+    }
+    .container {
+        width: 50vw; /*Aqui estamos diminuindo a largura do container.*/
+    }
+    .form {
+        width: 100vw; /*Aqui estamos configurando o formulário para ocupar toda a tela já que a imagem foi ocultada.*/
+    }
+}
+
+@media screen and (max-width: 480px){
+    .container {
+        width: 90vw;
+        height: auto;
+    }
+    .input-group {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        overflow-y: scroll;
+        max-height: 160px;
+        padding-right: 80px;
+    }
+    .status-inputs {
+        margin-top: 30px;
+    }
+    .status-group {
+        flex-direction: column;
+    }
+    .status-input {
+        margin-top: 8px;
+    }
+}
+
+}

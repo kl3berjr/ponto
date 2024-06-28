@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "assets/css/style.css">
+    <title>Relógio de Ponto</title>
+
+</head>
+<body>
+    <!--principal div da nossa página, todas as outras estarão dentro dela.-->
+    <div class = "container">
+
+        <div class = "form-image"> <!--Aqui criamos uma div onde será inserida a imagem do formulário.-->
+            <img src = "assets/img/relogio.jpg" alt = "Imagem do Formulário.">
+        </div>
+
+        <div class = "form"> <!--Aqui criamos a div que conterá todos os elementos do formulário.-->
+            <form action = ""> <!--Aqui utilizamos a tag form própria para a criação de fomrulários.-->
+                <div class = "form-header"> 
+                    <div class = "title">
+                        <h1>Relógio de ponto</h1>
+                    </div>
+                </div>
+                
+                <div class = "input-group" > <!--Aqui criamos um div para organizar o grupo de caixas de texto e suas descrições.-->
+                    <div class = "input-box"> <!--Aqui criamos uma div individual para campo de text e seu respectivo título.-->
+                        <label for = "name">Nome</label> <!--Aqui criamos o título do campo.-->
+                        <input id = "name" type = "text" name = "name" placeholder = "Digite o nome" required> <!--Aqui criamos a caixa de texto.-->
+                    </div>
+                    <div class = "input-box">
+                        <label for="IDm">Matricula</label>
+                        <input id="IDm" type="number" name="IDm" placeholder="Digite a matricula" required>
+                    </div>
+                    <div class = "input-box">
+                        <label for = "date">Dia e Mês</label>
+                        <input id="date" type="date" name="date" required>
+                    </div>
+                    <div class = "input-box">
+                        <label for="entryTime">Horário de entrada</label>
+                        <input id="entryTime" type="time" name="entryTime" required>
+                        <label for="exitTime">Horário de saída</label>
+                        <input id="exitTime" type="time" name="exitTime" required>
+                    </div>
+                    
+                </div>
+
+                <div class = "status-inputs"> <!--Aqui criamos uma div para guardar o título "status" e os rádio-buttons com as opções a serem marcadas.-->
+                    <div class = "status-inputs"> <!--Aqui criamos o título "status".-->
+                        <h6>Situação: </h6>
+                    </div>
+                
+                    <div class = "status-inputs"> <!--Aqui criamos uma div para organizar o grupo de Rádio-Buttons e suas descrições.-->
+                        <div class = "status-input"> <!--Aqui criamos uma div individual para cada rádio-button e sua respectiva descrição.-->
+                            <input type = "radio" id = "present" name = "status" value = "Presente" required> <!--Aqui criamos o rádio-button (bolinha de marcação).-->
+                            <label for = "present">Presente</label> <!--Aqui criamos a descrição do rádio-button.-->
+                        </div>
+                        <div class = "status-input">
+                            <input type = "radio" id = "fal" name = "status" status = "Falta" required>
+                            <label for = "fal">Falta</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class = "register-button"> <!--Aqui criamos uma div para o botão "Cadastrar" do formulário.-->
+                    <button type = "submit">Cadastrar</button>
+                    <button type = "button" onclick="generatePDF()">Gerar Pdf</button>
+                </div>
+            </form>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.2/jspdf.debug.js" integrity="sha512-rAzZtAD9aZXKAjivLBjA5+bNjWjTtGVa62S3YFxWNikNkyMcFHxRD3RK7aLYhM0sPoAuV5OaFgF0Wc8TN/R9VQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="assets/js/script.js"></script>
+
+        </div>
+    </div>
+</body>
+</html>
