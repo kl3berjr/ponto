@@ -6,10 +6,12 @@ function generatePDF() {
     const exitTime = document.getElementById('exitTime').value;
     let status = '';
 
-        if (document.getElementById('entryTime').checked) {
-            status = 'entryTime';
-        } else if (document.getElementById('exitTime').checked) {
-            status = 'exitTime';
+         if (entryTime && exitTime) {
+            status = 'Entrada e saída preenchidos';
+        } else if (entryTime) {
+            status = 'Somente entrada preenchida';
+        } else if (exitTime) {
+            status = 'Somente saída preenchida';
         } else {
             alert('Preencha todos os campos!');
             return;
