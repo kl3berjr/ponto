@@ -8,6 +8,7 @@ function generatePDF() {
 
          if (entryTime && exitTime) {
             status = 'Entrada e saída preenchidos';
+         }
          else {
             alert('Preencha todos os campos!');
             return;
