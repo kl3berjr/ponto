@@ -6,10 +6,10 @@ function generatePDF() {
     const exitTime = document.getElementById('exitTime').value;
     let status = '';
 
-        if (document.getElementById('present').checked) {
-            status = 'Presente';
-        } else if (document.getElementById('fal').checked) {
-            status = 'Falta';
+        if (document.getElementById('entryTime').checked) {
+            status = 'entryTime';
+        } else if (document.getElementById('exitTime').checked) {
+            status = 'exitTime';
         } else {
             alert('Preencha todos os campos!');
             return;
