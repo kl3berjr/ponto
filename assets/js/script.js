@@ -1,3 +1,18 @@
+// Bloqueia datas anteriores
+const dateInput = document.getElementById('date');
+const today = new Date().toISOString().split('T')[0];
+dateInput.min = today;
+
+
+
+// Pega a hora atual do dispositivo
+function getCurrentTime() {
+  const now = new Date();
+  let hours = String(now.getHours()).padStart(2, '0');
+  let minutes = String(now.getMinutes()).padStart(2, '0');
+  return `${hours}:${minutes}`;
+};
+
 function generatePDF() {
     const name = document.getElementById('name').value;
     const IDm = document.getElementById('IDm').value;
@@ -26,4 +41,5 @@ function generatePDF() {
     doc.save('relatorio.pdf');
     
 }
+
 
