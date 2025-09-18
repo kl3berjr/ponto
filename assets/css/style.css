@@ -1,141 +1,194 @@
+:root {
+  --bg-page: #f2f2f2;
+  --bg-image: #737781;
+  --bg-card: #fff;
+  --primary: #5B7CC2;
+  --primary-hover: #4a67a8;
+  --text-dark: #333;
+  --border-input: #ccc;
+}
+
+
 body {
-  width: 100vw; 
-  height: 100vh; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  background: #f2f2f2; 
-  font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Sans-serif; 
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-page);
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Sans-serif;
   margin: 0;
 }
 
+/* === Container principal === */
 .container {
-  width: 80vw; 
-  max-width: 1200px;
-  height: auto; 
   display: flex;
-  box-shadow: 5px 5px 15px #ccc; 
+  width: 80vw;
+  max-width: 1200px;
+  background-color: var(--bg-card);
   border-radius: 10px;
+  box-shadow: 5px 5px 15px #ccc;
   overflow: hidden;
-  background-color: #fff;
 }
 
+/* === Imagem lateral === */
 .form-image {
-  width: 50%;
+  flex: 1;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
-  background-color: #737781; 
-  padding: 20px; 
+  background-color: var(--bg-image);
+  padding: 20px;
 }
 
 .form-image img {
-  width: 100%; 
-  max-width: 500px; 
+  width: 100%;
+  max-width: 500px;
   border-radius: 10px;
 }
 
+/* === Formulário === */
 .form {
-  width: 50%; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 40px;
 }
 
+/* Título */
 .form-header {
   text-align: center;
   margin-bottom: 20px;
 }
 
+/* Campos do formulário */
 .input-group {
-  display: flex; 
-  flex-wrap: wrap; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   gap: 20px;
-  justify-content: space-between; 
 }
 
 .input-box {
-  display: flex; 
-  flex-direction: column; 
-  width: 48%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-box label {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 5px;
 }
 
 .input-box input {
-  margin-top: 5px;
-  padding: 12px; 
-  border: 1px solid #ccc; 
-  border-radius: 8px; 
+  padding: 12px;
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   width: 100%;
   transition: all 0.3s ease;
 }
 
+.input-box input:hover {
+  background-color: #f9f9f9;
+}
+
 .input-box input:focus {
-  outline: none; 
-  border-color: #5B7CC2; 
+  outline: none;
+  border-color: var(--primary);
   box-shadow: 0 0 0 2px rgba(91,124,194,0.2);
 }
 
-.input-box input:hover {
-  background-color: #f9f9f9; 
-}
-
-.input-box label {
-  font-size: 14px; 
-  font-weight: bold; 
-  color: #333;
-}
-
+/* Status */
 .status-inputs {
-  font-size: 16px;
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 15px;
   margin: 20px 0;
-}
-
-.status-inputs label {
-  font-size: 14px; 
+  font-size: 14px;
   font-weight: bold;
-  color: #333; 
+  color: var(--text-dark);
 }
 
+/* Botões */
 .register-button {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   gap: 10px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .register-button button {
   flex: 1;
-  border:none; 
-  background-color: #5B7CC2; 
-  font-size: 15px; 
-  font-weight: bold; 
-  color: #FFFFFF; 
-  padding: 12px; 
-  border-radius: 8px; 
-  cursor: pointer; 
+  border: none;
+  background-color: var(--primary);
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.register-button button:hover{
-  background-color: #4a67a8;
+.register-button button:hover {
+  background-color: var(--primary-hover);
 }
 
-@media screen and (max-width: 1080px){
+/* === Responsivo === */
+/* === Responsivo === */
+@media screen and (max-width: 1080px) {
+  .container {
+    flex-direction: column;
+    width: 95vw;
+  }
+
   .form-image {
     display: none;
   }
-  .container {
-    width: 95vw; 
-    flex-direction: column;
-  }
+
   .form {
     width: 100%;
+    padding: 20px;
   }
+
+  .input-group {
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+  }
+
   .input-box {
     width: 100%;
   }
+
+  .register-button {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .register-button button {
+    width: 100%;
+  }
 }
+
+@media screen and (max-width: 480px) {
+  .form {
+    padding: 15px;
+  }
+
+  .input-group {
+    gap: 12px;
+  }
+
+  .status-inputs {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
